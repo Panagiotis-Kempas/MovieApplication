@@ -1,0 +1,35 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MovieApplication.Models.Entities
+{
+    public class Movie
+    {
+        public Guid MovieId { get; set; }
+        [Required(ErrorMessage = "Title is mandatory"), MaxLength(60), MinLength(2)]
+        public string Title { get; set; }
+        [Required, Range(0, 10)]
+        public double Rating { get; set; }
+        public Country Country { get; set; }
+        [Required]
+        [Display(Name = "Production Year")]
+        public DateTime ProductionYear { get; set; }
+        [Required, Range(0, 1200)]
+        public int Duration { get; set; }  //Minutes
+        [Display(Name = "Image")]
+        public string PhotoUrl { get; set; }
+        [Display(Name = "Trailer")]
+        public string TrailerUrl { get; set; }
+        public double? Price { get; set; }
+        [Display(Name = "I've watched it!")]
+        public bool Watched { get; set; }
+
+
+        //Navigation Properties
+        public virtual ICollection<Actor> Actors { get; set; }
+        public int DirectorId { get; set; }
+        public virtual Director Director { get; set; }
+
+        public int? GenreId { get; set; }
+        public virtual Genre Genre { get; set; }
+    }
+}

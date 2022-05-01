@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MovieApplication.Database.Configurations;
 using MovieApplication.Models.Entities;
 
 namespace MovieApplication.Database
@@ -12,7 +13,7 @@ namespace MovieApplication.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new ActorConfiguration());
         }
 
         public DbSet<Actor> Actors { get; set; }

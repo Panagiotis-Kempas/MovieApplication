@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MovieApplication.Models.JoinTables;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MovieApplication.Models.Entities
@@ -7,7 +8,7 @@ namespace MovieApplication.Models.Entities
     {
 
         
-        public Guid ActorId { get; set; }
+        public int ActorId { get; set; }
         [Required(), MaxLength(60),MinLength(2)]
         [Display(Name ="First Name")]
         public string FirstName { get; set; }
@@ -36,7 +37,7 @@ namespace MovieApplication.Models.Entities
 
         //Navigation Properties
         public virtual ICollection<Photo> Photos { get; set; }
-        public virtual ICollection<Movie> Movies { get; set; }
+        public virtual ICollection<ActorMovie> ActorMovies { get; set; }
 
     }
 }

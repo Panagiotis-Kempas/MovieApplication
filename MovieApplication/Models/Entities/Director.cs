@@ -5,7 +5,7 @@ namespace MovieApplication.Models.Entities
 {
     public class Director
     {
-        public Guid DirectorId { get; set; }
+        public int DirectorId { get; set; }
         [Required, MaxLength(60), MinLength(2)]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }

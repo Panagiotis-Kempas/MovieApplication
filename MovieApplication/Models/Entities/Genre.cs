@@ -2,7 +2,7 @@
 {
     public class Genre
     {
-        public Guid GenreId { get; set; }
+        public int GenreId { get; set; }
         public string Kind { get; set; }
 
         //Navigation Properties

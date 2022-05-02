@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MovieApplication.Models.JoinTables;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieApplication.Models.Entities
 {
     public class Movie
     {
-        public Guid MovieId { get; set; }
+        public int MovieId { get; set; }
         [Required(ErrorMessage = "Title is mandatory"), MaxLength(60), MinLength(2)]
         public string Title { get; set; }
         [Required, Range(0, 10)]
@@ -25,7 +26,7 @@ namespace MovieApplication.Models.Entities
 
 
         //Navigation Properties
-        public virtual ICollection<Actor> Actors { get; set; }
+        public virtual ICollection<ActorMovie> ActorMovies { get; set; }
         public int DirectorId { get; set; }
         public virtual Director Director { get; set; }
 

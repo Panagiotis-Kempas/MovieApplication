@@ -127,9 +127,8 @@ namespace MovieApplication.Database.Configurations
                 new ActorMovie() { ActorId = 86, MovieId = 35 },
                 new ActorMovie() { ActorId = 87, MovieId = 35 },
                 new ActorMovie() { ActorId = 88, MovieId = 35 },
-                new ActorMovie() { ActorId = 89, MovieId = 36 },
-                new ActorMovie() { ActorId = 90, MovieId = 36 },
-                new ActorMovie() { ActorId = 91, MovieId = 36 }
+                new ActorMovie() { ActorId = 89, MovieId = 36 }
+                
                 );
         }
     }

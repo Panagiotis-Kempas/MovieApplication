@@ -1,0 +1,10 @@
+﻿@model IEnumerable<MovieApplication.Models.Entities.Actor>
+
+
+
+<ul>
+    @foreach(var actor in Model)
+    {
+        <li>@actor.FirstName</li>
+    }
+</ul>

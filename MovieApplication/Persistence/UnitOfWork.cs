@@ -14,6 +14,8 @@ namespace MovieApplication.Persistence
            
         }
         public IActorRepository Actors { get; private set; }
+
+        public IMovieRepository Movies { get; private set; }
        
         public int Complete()
         {

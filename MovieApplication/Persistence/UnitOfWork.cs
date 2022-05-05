@@ -11,7 +11,7 @@ namespace MovieApplication.Persistence
         {
             _context = db;
             Actors = new ActorRepository(_context);
-           
+           Movies = new MovieRepository(_context);
         }
         public IActorRepository Actors { get; private set; }
 

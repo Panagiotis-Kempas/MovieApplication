@@ -15,7 +15,7 @@ namespace MovieApplication.Controllers
 
         public IActionResult Index()
         {
-            var actors = _unitOfWork.Actors.GetAll();
+            var actors = _unitOfWork.Actors.AllActors();
             return View(actors);
         }
     }

@@ -19,6 +19,12 @@ namespace MovieApplication.Persistence.Repositories
             return actors;
         }
 
+        public IEnumerable<Actor> AllActors()
+        {
+            var actors = ApplicationDbContext.Actors.Where(x=> !string.IsNullOrWhiteSpace(x.PhotoUrl)).ToList();
+            return actors;
+        }
+
 
 
     }

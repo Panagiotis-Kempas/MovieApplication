@@ -19,6 +19,24 @@ namespace MovieApplication.Persistence.Repositories
             return movies;
         }
 
+        public IEnumerable<Movie> MostExpensive()
+        {
+            var movies = ApplicationDbContext.Movies.Where(x => x.Price > 15).Take(10).ToList();
+            return movies;
+        }
+
+        public IEnumerable<string> Trailers()
+        {
+            var movies = ApplicationDbContext.Movies.Select(x=> x.TrailerUrl).ToList();
+            return movies;
+        }
+
+        public IEnumerable<Movie> TwentyFirstCentury()
+        {
+            var movies = ApplicationDbContext.Movies.Where(x => x.ProductionYear.Year > 1990).Take(15).ToList();
+            return movies;
+        }
+
 
     }
 }

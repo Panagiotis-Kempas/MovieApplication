@@ -6,5 +6,7 @@ namespace MovieApplication.Persistence.IRepositories
     {
         IEnumerable<Actor> GetActorsByName(string name);
 
+        IEnumerable<Actor> AllActors();
+
     }
 }

@@ -13,6 +13,20 @@ namespace MovieApplication.Controllers
         {
             _unitOfWork = unitOfWork;
         }
+
+        public IActionResult Index()
+        {
+
+            ViewBag.TopRated = _unitOfWork.Movies.GetHighestRatingMovies();
+            ViewBag.TwentyFirst = _unitOfWork.Movies.TwentyFirstCentury();
+            ViewBag.MostExpensive = _unitOfWork.Movies.MostExpensive();
+            ViewBag.Trailers = _unitOfWork.Movies.Trailers();
+            
+        
+            return View();
+        }
+
+
         public IActionResult TopRatedMovies()
         {
             var movies = _unitOfWork.Movies.GetHighestRatingMovies();
